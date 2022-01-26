@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <div>
         <Head>
           <title>Gabriel Carpreau</title>
-          <meta name="description" content="Website of Gabriel Carpreau, Software Developer" />
+          <meta name="description" content="Gabriel Carpreau, Software Developer based in Manchester, UK" />
         </Head>
 
         <Container>

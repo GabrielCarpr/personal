@@ -12,9 +12,14 @@ export const theme = {
             font-family: Inter, 'sans-serif';
             font-weight: bold;
         `,
+        lead: css`
+            font-family: Inter, 'sans-serif';
+            font-weight: normal;
+        `,
         body: css`
             font-family: Inter, 'sans-serif';
-            font-weight: bold;
+            font-weight: normal;
+            line-height: 1.5;
         `,
         accent: css`
             font-family: 'Source Code Pro', monospace;
@@ -25,5 +30,12 @@ export const theme = {
             text-shadow: 0px 0px 3px rgba(49, 175, 145, 0.64);
             filter: drop-shadow(0px 0px 3px rgba(49, 175, 145, 0.64));
         `
+    },
+    padding: {
+        outer: "1rem",
+        columnMax: "50rem",
+        columnWidth: "70%"
     }
 }
+
+export type ThemeType = typeof theme;
