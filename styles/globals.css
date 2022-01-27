@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Code+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Code+Pro&display=swap");
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -133,6 +133,12 @@ table {
 /* Global */
 html {
   font-size: 16px;
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
 }
 
 h1 {

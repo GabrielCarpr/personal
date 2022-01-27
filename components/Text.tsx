@@ -1,97 +1,102 @@
-import React from 'react';
-import styled, { css, ThemeProps } from 'styled-components';
-import { theme as baseTheme } from 'theme';
+import React from "react";
+import styled, { css, ThemeProps } from "styled-components";
+import { theme as baseTheme } from "theme";
 
 interface Props {
-    level?: 'h1'|'h2'|'h3'|'h4'|'h5'|'body'|'lead'|'accent';
-    color?: Colors;
-    children: React.ReactNode;
+  level?: "h1" | "h2" | "h3" | "h4" | "h5" | "body" | "lead" | "accent";
+  color?: Colors;
+  children: React.ReactNode;
 }
 
-type Colors = 'primary'|'secondary'|'accent';
+type Colors = "primary" | "secondary" | "accent";
 
 export const Text = (props: Props) => {
-    const { color, level = 'body', children } = props;
+  const { color, level = "body", children } = props;
 
-    const Element = {
-        h1: H1,
-        h2: H2,
-        h3: H3,
-        h4: H4,
-        h5: H5,
-        body: Body,
-        lead: Body,
-        accent: Accent
-    }[level];
+  const Element = {
+    h1: H1,
+    h2: H2,
+    h3: H3,
+    h4: H4,
+    h5: H5,
+    body: Body,
+    lead: Body,
+    accent: Accent,
+  }[level];
 
-    return <Element lead={level == 'lead'} color={color}>
-        {children}
-    </Element>;
-}
+  return (
+    <Element lead={level == "lead"} color={color}>
+      {children}
+    </Element>
+  );
+};
 
-const color = (props: ThemeProps<typeof baseTheme>&ColorProps) => css`
-    ${props.color && css`
-        color: ${props.color == 'primary' && props.theme.colors.primary};
-        color: ${props.color == 'secondary' && props.theme.colors.secondary};
-        color: ${props.color == 'accent' && props.theme.colors.accent};
-    `}
-`
+const color = (props: ThemeProps<typeof baseTheme> & ColorProps) => css`
+  ${props.color &&
+  css`
+    color: ${props.color == "primary" && props.theme.colors.primary};
+    color: ${props.color == "secondary" && props.theme.colors.secondary};
+    color: ${props.color == "accent" && props.theme.colors.accent};
+  `}
+`;
 
 interface ColorProps {
-    color?: Colors;
-} 
+  color?: Colors;
+}
 
 const H1 = styled.h1<ColorProps>`
-    font-size: 3.052rem;
-    ${props => props.theme.type.heading}
-    ${color}
-    color: ${props => props.theme.colors.primary};
+  font-size: 3.052rem;
+  ${(props) => props.theme.type.heading}
+  ${color}
+    color: ${(props) => props.theme.colors.primary};
 `;
 
 const H2 = styled.h2<ColorProps>`
-    font-size: 2.441rem;
-    ${props => props.theme.type.heading}
-    color: ${props => props.theme.colors.primary};
-    ${color}
+  font-size: 2.441rem;
+  ${(props) => props.theme.type.heading}
+  color: ${(props) => props.theme.colors.primary};
+  ${color}
 `;
 
 const H3 = styled.h3<ColorProps>`
-    font-size: 1.953rem;
-    ${props => props.theme.type.heading}
-    color: ${props => props.theme.colors.secondary};
-    ${color}
+  font-size: 1.953rem;
+  ${(props) => props.theme.type.heading}
+  color: ${(props) => props.theme.colors.secondary};
+  ${color}
 `;
 
 const H4 = styled.h4<ColorProps>`
-    font-size: 1.563rem;
-    ${props => props.theme.type.heading}
-    color: ${props => props.theme.colors.secondary};
-    ${color}
+  font-size: 1.563rem;
+  ${(props) => props.theme.type.heading}
+  color: ${(props) => props.theme.colors.secondary};
+  ${color}
 `;
 
 const H5 = styled.h5<ColorProps>`
-    font-size: 1.25rem;
-    ${props => props.theme.type.heading}
-    color: ${props => props.theme.colors.secondary};
-    ${color}
+  font-size: 1.25rem;
+  ${(props) => props.theme.type.heading}
+  color: ${(props) => props.theme.colors.secondary};
+  ${color}
 `;
 
-const Body = styled.p<ColorProps&{ lead?: boolean }>`
-    ${props => props.theme.type.body}
-    color: ${props => props.theme.colors.secondary};
-    font-size: 1rem;
+const Body = styled.p<ColorProps & { lead?: boolean; margin?: boolean }>`
+  ${(props) => props.theme.type.body}
+  color: ${(props) => props.theme.colors.secondary};
+  font-size: 1rem;
 
-    ${({ lead }) => lead && css`
-        font-size: 1.25rem;
-        color: ${props => props.theme.colors.primary};
-        ${props => props.theme.type.lead}
+  ${({ lead }) =>
+    lead &&
+    css`
+      font-size: 1.25rem;
+      color: ${(props) => props.theme.colors.primary};
+      ${(props) => props.theme.type.lead}
     `}
 
-    ${color}
-`
+  ${color}
+`;
 
 const Accent = styled.span`
-    ${props => props.theme.type.accent}
-    color: ${props => props.theme.colors.accent};
-    ${props => props.theme.effects.glow}
+  ${(props) => props.theme.type.accent}
+  color: ${(props) => props.theme.colors.accent};
+  ${(props) => props.theme.effects.glow}
 `;
