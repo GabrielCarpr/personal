@@ -25,7 +25,7 @@ const getIcon = (name: "gh" | "li" | "mail" | "cv", link: string) => {
   }[name];
 
   return (
-    <a href={link} target="_blank">
+    <a href={link} rel="noreferrer" target="_blank">
       <Icon height="1.7em" width="1.5em" />
     </a>
   );

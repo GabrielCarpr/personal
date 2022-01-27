@@ -19,7 +19,7 @@ interface Props {
 
 export const Image = (props: Props) => {
   const { image, outlined } = props;
-  return <NextImage src={images[image]} outlined={outlined} />;
+  return <NextImage alt="" src={images[image]} outlined={outlined} />;
 };
 
 const NextImage = styled(BaseNextImage)<{ outlined?: boolean }>`

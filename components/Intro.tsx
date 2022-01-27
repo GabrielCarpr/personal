@@ -8,15 +8,15 @@ export const Intro = () => {
   return (
     <Column>
       <Container>
-        <Text level="accent">Hi I'm</Text>
+        <Text level="accent">Hi I&apos;m</Text>
         <Text level="h1">Gabriel Carpreau</Text>
         <Text level="lead" color="secondary">
           Software Developer
         </Text>
         <Text>
-          I’m a full-stack developer with a special interest in backend and
-          infrastructure, based in Manchester, UK. I’m currently building the
-          best dental practice CRM in the world, Leadflo.
+          I&apos;m a full-stack developer with a special interest in product,
+          backend and infrastructure based in Manchester, UK. I&apos;m currently
+          building the best dental practice CRM in the world, Leadflo.
         </Text>
         <Button href="mailto:me@gabrielcarpreau.com">Contact Me</Button>
       </Container>
