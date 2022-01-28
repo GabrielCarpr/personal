@@ -2,6 +2,7 @@ import React from "react";
 import { ProjectSchema } from "types";
 import { Column } from "./layout/Column";
 import { Padding } from "./layout/Padding";
+import { Spacer } from "./layout/Spacer";
 import { Project } from "./Project";
 import { Text } from "./Text";
 
@@ -28,6 +29,7 @@ export const Projects = (props: Props) => {
     <Column>
       <Padding>
         <Text level="h2">Projects</Text>
+        <Spacer />
       </Padding>
       {content}
     </Column>

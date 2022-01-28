@@ -21,7 +21,9 @@ export const Project = (props: Props) => {
   return (
     <Margin hasImage={!!image}>
       <Container>
-        <Text level="h3">{name}</Text>
+        <Text level="h3" id={name}>
+          {name}
+        </Text>
       </Container>
       <Hidden above={850}>
         {image && <Image image={image} outlined priority={priority} />}
@@ -29,14 +31,14 @@ export const Project = (props: Props) => {
       <Container>
         <Row hasImage={!!image}>
           <Text level="lead">
-            <ReactMarkdown>{lead}</ReactMarkdown>
+            <ReactMarkdown linkTarget="_blank">{lead}</ReactMarkdown>
           </Text>
           <Hidden below={850}>
             {image && <Image image={image} outlined priority={priority} />}
           </Hidden>
         </Row>
         <Text>
-          <ReactMarkdown>{children}</ReactMarkdown>
+          <ReactMarkdown linkTarget="_blank">{children}</ReactMarkdown>
         </Text>
 
         {github && (

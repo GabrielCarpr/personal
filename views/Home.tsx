@@ -1,10 +1,10 @@
 import { CTA } from "components/CTA";
 import { Header } from "components/Header";
 import { Intro } from "components/Intro";
+import { Spacer } from "components/layout/Spacer";
 import { Projects } from "components/Projects";
 import { Skills } from "components/Skills";
 import React from "react";
-import styled from "styled-components";
 import { ProjectSchema } from "types";
 
 interface Props {
@@ -83,8 +83,3 @@ const home = (props: Props) => {
 };
 
 export default home;
-
-const Spacer = styled.span<{ size?: number }>`
-  display: block;
-  height: ${(props) => props.size ?? 1}rem;
-`;

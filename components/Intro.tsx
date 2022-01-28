@@ -16,7 +16,8 @@ export const Intro = () => {
         <Text>
           I&apos;m a full-stack developer with a special interest in product,
           backend and infrastructure based in Manchester, UK. I&apos;m currently
-          building the best dental practice CRM in the world, Leadflo.
+          building the best dental practice CRM in the world,{" "}
+          <a href="#Leadflo">Leadflo</a>.
         </Text>
         <Button href="mailto:me@gabrielcarpreau.com">Contact Me</Button>
       </Container>

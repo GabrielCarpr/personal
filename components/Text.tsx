@@ -6,12 +6,13 @@ interface Props {
   level?: "h1" | "h2" | "h3" | "h4" | "h5" | "body" | "lead" | "accent";
   color?: Colors;
   children: React.ReactNode;
+  id?: string;
 }
 
 type Colors = "primary" | "secondary" | "accent";
 
 export const Text = (props: Props) => {
-  const { color, level = "body", children } = props;
+  const { color, level = "body", children, id } = props;
 
   const Element = {
     h1: H1,
@@ -25,7 +26,7 @@ export const Text = (props: Props) => {
   }[level];
 
   return (
-    <Element lead={level == "lead"} color={color}>
+    <Element id={id} lead={level == "lead"} color={color}>
       {children}
     </Element>
   );
