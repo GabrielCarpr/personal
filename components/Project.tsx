@@ -4,7 +4,7 @@ import { Button } from "./Button";
 import { Hidden } from "./Hidden";
 import { Image, ImageNames } from "./Image";
 import { Text } from "./Text";
-import Markdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
 
 interface Props {
   name: string;
@@ -29,14 +29,14 @@ export const Project = (props: Props) => {
       <Container>
         <Row hasImage={!!image}>
           <Text level="lead">
-            <Markdown>{lead}</Markdown>
+            <ReactMarkdown>{lead}</ReactMarkdown>
           </Text>
           <Hidden below={850}>
             {image && <Image image={image} outlined priority={priority} />}
           </Hidden>
         </Row>
         <Text>
-          <Markdown>{children}</Markdown>
+          <ReactMarkdown>{children}</ReactMarkdown>
         </Text>
 
         {github && (
