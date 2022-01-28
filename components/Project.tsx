@@ -11,22 +11,25 @@ interface Props {
   image?: ImageNames;
   github?: string;
   children: React.ReactNode;
+  priority?: boolean;
 }
 
 export const Project = (props: Props) => {
-  const { name, image, github, lead, children } = props;
+  const { name, image, github, lead, children, priority } = props;
 
   return (
     <Margin hasImage={!!image}>
       <Container>
         <Text level="h3">{name}</Text>
       </Container>
-      <Hidden above={850}>{image && <Image image={image} outlined />}</Hidden>
+      <Hidden above={850}>
+        {image && <Image image={image} outlined priority={priority} />}
+      </Hidden>
       <Container>
         <Row hasImage={!!image}>
           <Text level="lead">{lead}</Text>
           <Hidden below={850}>
-            {image && <Image image={image} outlined />}
+            {image && <Image image={image} outlined priority={priority} />}
           </Hidden>
         </Row>
         {children}

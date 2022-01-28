@@ -15,6 +15,7 @@ export const Projects = () => {
         name="Leadflo"
         image="leadflo"
         lead="Leadflo is a CRM for dental practices that helps dentists, nurses, and receptionists convert enquiries into high-value patients by organising and automating patient communications across multiple channels."
+        priority
       >
         <Text>
           When I started working on Leadflo, it was a very rough MVP with

@@ -14,12 +14,21 @@ export type ImageNames = keyof typeof images;
 
 interface Props {
   image: ImageNames;
+  priority?: boolean;
   outlined?: boolean;
 }
 
 export const Image = (props: Props) => {
   const { image, outlined } = props;
-  return <NextImage alt="" src={images[image]} outlined={outlined} />;
+  return (
+    <NextImage
+      alt=""
+      src={images[image]}
+      outlined={outlined}
+      quality={90}
+      placeholder="blur"
+    />
+  );
 };
 
 const NextImage = styled(BaseNextImage)<{ outlined?: boolean }>`
