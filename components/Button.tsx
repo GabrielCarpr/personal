@@ -20,7 +20,7 @@ export const Button = (props: Props) => {
 };
 
 const Wrapper = styled.a`
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   outline: none;
   text-decoration: none;
   color: ${(props) => props.theme.colors.accent};

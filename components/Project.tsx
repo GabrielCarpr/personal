@@ -4,13 +4,14 @@ import { Button } from "./Button";
 import { Hidden } from "./Hidden";
 import { Image, ImageNames } from "./Image";
 import { Text } from "./Text";
+import Markdown from "react-markdown";
 
 interface Props {
   name: string;
   lead: string;
   image?: ImageNames;
   github?: string;
-  children: React.ReactNode;
+  children: string; // Markdown as a string
   priority?: boolean;
 }
 
@@ -27,12 +28,16 @@ export const Project = (props: Props) => {
       </Hidden>
       <Container>
         <Row hasImage={!!image}>
-          <Text level="lead">{lead}</Text>
+          <Text level="lead">
+            <Markdown>{lead}</Markdown>
+          </Text>
           <Hidden below={850}>
             {image && <Image image={image} outlined priority={priority} />}
           </Hidden>
         </Row>
-        {children}
+        <Text>
+          <Markdown>{children}</Markdown>
+        </Text>
 
         {github && (
           <Button href={github} icon="GitHub">
@@ -47,11 +52,13 @@ export const Project = (props: Props) => {
 const Margin = styled.div<{ hasImage?: boolean }>`
   margin-bottom: 2rem;
 
-  ${({ hasImage }) =>
-    !hasImage &&
-    css`
-      width: 70%;
-    `}
+  @media (min-width: 850px) {
+    ${({ hasImage }) =>
+      !hasImage &&
+      css`
+        width: 70%;
+      `}
+  }
 
   &:last-child {
     margin-bottom: 0;

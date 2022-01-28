@@ -5,15 +5,20 @@ import { Projects } from "components/Projects";
 import { Skills } from "components/Skills";
 import React from "react";
 import styled from "styled-components";
+import { ProjectSchema } from "types";
 
-const home = () => {
+interface Props {
+  projects: ProjectSchema[];
+}
+
+const home = (props: Props) => {
   return (
     <>
       <Header />
       <Spacer size={6} />
       <Intro />
       <Spacer size={5} />
-      <Projects />
+      <Projects projects={props.projects} />
       <Spacer size={5} />
       <Skills
         data={[
@@ -53,7 +58,7 @@ const home = () => {
               "Terraform",
               "Ansible",
               "ECS",
-              "Kubernetes",
+              "Kubernetes (at hobby level)",
             ],
           },
           {

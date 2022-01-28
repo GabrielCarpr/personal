@@ -40,6 +40,27 @@ const color = (props: ThemeProps<typeof baseTheme> & ColorProps) => css`
   `}
 `;
 
+const typeStyles = css`
+  & p {
+    margin-bottom: 1rem;
+  }
+  & p:last-child {
+    margin-bottom: 0;
+  }
+
+  & a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  & a,
+  & strong {
+    ${({ theme }) => theme.type.accent};
+    color: ${({ theme }) => theme.colors.accent};
+    ${({ theme }) => theme.effects.glow}
+  }
+`;
+
 interface ColorProps {
   color?: Colors;
 }
@@ -56,6 +77,7 @@ const H2 = styled.h2<ColorProps>`
   ${(props) => props.theme.type.heading}
   color: ${(props) => props.theme.colors.primary};
   ${color}
+  ${typeStyles}
 `;
 
 const H3 = styled.h3<ColorProps>`
@@ -63,6 +85,7 @@ const H3 = styled.h3<ColorProps>`
   ${(props) => props.theme.type.heading}
   color: ${(props) => props.theme.colors.secondary};
   ${color}
+  ${typeStyles}
 `;
 
 const H4 = styled.h4<ColorProps>`
@@ -70,6 +93,7 @@ const H4 = styled.h4<ColorProps>`
   ${(props) => props.theme.type.heading}
   color: ${(props) => props.theme.colors.secondary};
   ${color}
+  ${typeStyles}
 `;
 
 const H5 = styled.h5<ColorProps>`
@@ -77,12 +101,16 @@ const H5 = styled.h5<ColorProps>`
   ${(props) => props.theme.type.heading}
   color: ${(props) => props.theme.colors.secondary};
   ${color}
+  ${typeStyles}
 `;
 
 const Body = styled.p<ColorProps & { lead?: boolean; margin?: boolean }>`
   ${(props) => props.theme.type.body}
   color: ${(props) => props.theme.colors.secondary};
   font-size: 1rem;
+
+  ${color}
+  ${typeStyles}
 
   ${({ lead }) =>
     lead &&
@@ -91,8 +119,6 @@ const Body = styled.p<ColorProps & { lead?: boolean; margin?: boolean }>`
       color: ${(props) => props.theme.colors.primary};
       ${(props) => props.theme.type.lead}
     `}
-
-  ${color}
 `;
 
 const Accent = styled.span`

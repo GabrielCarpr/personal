@@ -1,10 +1,18 @@
+import { getProjects } from "lib/api";
 import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 import { Theme } from "theme";
+import { ProjectSchema } from "types";
 import Main from "views/Home";
 
-const Home: NextPage = () => {
+interface Props {
+  projects: ProjectSchema[];
+}
+
+const Home = (props: Props) => {
+  const { projects } = props;
+
   return (
     <Theme>
       <div>
@@ -17,7 +25,7 @@ const Home: NextPage = () => {
         </Head>
 
         <Container>
-          <Main />
+          <Main projects={projects} />
         </Container>
       </div>
     </Theme>
@@ -30,3 +38,11 @@ const Container = styled.main`
 `;
 
 export default Home;
+
+export const getStaticProps = async () => {
+  const projects = await getProjects();
+
+  return {
+    props: { projects },
+  };
+};
