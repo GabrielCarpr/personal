@@ -8,4 +8,4 @@ When I started working on Leadflo, it was a very rough MVP with mountains of tec
 
 Recently, I designed and led the implementation of its most ambitious feature, an automation engine, and delivered it way ahead of schedule.
 
-Leadflo is written in **PHP** and **Typescript** using **Laravel** and **React**, built by **CircleCI** into **Docker** containers, deployed by **Terraform**, running on **ECS**, monitored by **Prometheus**, **Alertmanager**, and **Grafana**, and uses **PostgreSQL**.
+Leadflo is written in **PHP** and **Typescript** using **Laravel** and **React**; is built by **CircleCI** into **Docker** containers deployed by **Terraform**; runs on **ECS**; monitored by **Prometheus**, **Alertmanager**, and **Grafana**; and uses **PostgreSQL**.
