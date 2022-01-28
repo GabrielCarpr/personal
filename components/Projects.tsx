@@ -18,6 +18,7 @@ export const Projects = (props: Props) => {
       image={proj.image ?? undefined}
       github={proj.github ?? undefined}
       lead={proj.lead}
+      key={proj.name}
     >
       {proj.content}
     </Project>
