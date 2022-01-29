@@ -1,7 +1,7 @@
 import React from "react";
 import BaseNextImage from "next/image";
-import Forum from "public/images/ForumScreenshot.jpg";
-import Leadflo from "public/images/LeadfloScreenshot.png";
+import Forum from "public/images/SupportForum.jpg";
+import Leadflo from "public/images/LeadfloScreenshot.jpg";
 import styled, { css, ThemeContext } from "styled-components";
 import { theme } from "theme";
 
