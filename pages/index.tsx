@@ -22,6 +22,12 @@ const Home = (props: Props) => {
             name="description"
             content="Gabriel Carpreau, Software Developer based in Manchester, UK"
           />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="100x100"
+            href="/images/favicon.ico"
+          />
         </Head>
 
         <Container>
