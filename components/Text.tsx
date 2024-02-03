@@ -42,8 +42,9 @@ const color = (props: ThemeProps<typeof baseTheme> & ColorProps) => css`
 `;
 
 const typeStyles = css`
-  & p {
+  & p, & ul {
     margin-bottom: 1rem;
+    list-style-position: inside
   }
   & p:last-child {
     margin-bottom: 0;

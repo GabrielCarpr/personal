@@ -11,13 +11,13 @@ export const Intro = () => {
         <Text level="accent">Hi I&apos;m</Text>
         <Text level="h1">Gabriel Carpreau</Text>
         <Text level="lead" color="secondary">
-          Software Developer
+          Senior Software Engineer (Backend)
         </Text>
         <Text>
-          I&apos;m a full-stack developer with a special interest in product,
-          backend and infrastructure based in Manchester, UK. I&apos;m currently
-          building the best dental practice CRM in the world,{" "}
-          <a href="#Leadflo">Leadflo</a>.
+          I&apos;m a senior backend software engineer with a special interest in product development
+          and infrastructure based in Manchester, UK. I&apos;m currently
+          working in the backend team at,{" "}
+          <a href="#RotaCloud">RotaCloud</a>.
         </Text>
         <Button href="mailto:me@gabrielcarpreau.com">Contact Me</Button>
       </Container>

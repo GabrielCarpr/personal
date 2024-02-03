@@ -15,7 +15,7 @@ const home = (props: Props) => {
   return (
     <>
       <Header />
-      <Spacer size={6} />
+      <Spacer size={6} mobileSize={3} />
       <Intro />
       <Spacer size={5} />
       <Projects projects={props.projects} />
@@ -35,30 +35,44 @@ const home = (props: Props) => {
             ],
           },
           {
-            title: "Frameworks/Libraries",
+            title: "Frameworks/Libraries/Protocols",
             skills: [
+              "NestJS",
+              "NodeJS",
               "React",
               "Laravel",
               "Redux",
               "Styled Components",
               "FastAPI",
               "Flask",
+              "REST",
+              "GraphQL"
             ],
           },
           {
             title: "Databases",
-            skills: ["PostgreSQL", "MySQL", "Redis", "MongoDB"],
+            skills: ["PostgreSQL", "MySQL", "Redis", "DynamoDB"],
           },
           {
             title: "Infrastructure",
             skills: [
               "CircleCI",
-              "GitlabCI",
+              "GitHub Actions",
               "Docker",
               "Terraform",
               "Ansible",
+              "Kubernetes",
+              "AWS: EventBridge",
+              "EC2",
               "ECS",
-              "Kubernetes (at hobby level)",
+              "EKS",
+              "S3",
+              "DynamoDB",
+              "RDS",
+              "ElastiCache",
+              "CloudWatch",
+              "IAM",
+              "Redshift",
             ],
           },
           {
@@ -72,7 +86,7 @@ const home = (props: Props) => {
               "Test-Driven Development",
               "Agile",
               "UX & UI Design (somewhat)",
-              "Figma",
+              "Microservices"
             ],
           },
         ]}
